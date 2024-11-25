@@ -9,6 +9,16 @@ import { CrewMember } from '../../models/crew-member.model';
 })
 export class HomeComponent implements OnInit {
   crewMemberList: CrewMember[] = [];
+  displayedColumns: string[] = [
+    'firstName',
+    'lastName',
+    'nationality',
+    'title',
+    'daysOnBoard',
+    'dailyRate',
+    'currency',
+    'certificates',
+  ];
 
   constructor(private crewService: CrewService) {}
 
@@ -17,15 +27,6 @@ export class HomeComponent implements OnInit {
   }
 
   loadCrew(): void {
-    this.crewService.getCrewMemberList().subscribe(
-      (data) => {
-        console.log('Fetched Crew Data:', data); // Log fetched data
-        this.crewMemberList = data;
-      },
-      (error) => {
-        console.error('Error fetching crew data:', error); // Log any errors
-      }
-    );
+    this.crewService.getCrewMemberList().subscribe((data) => (this.crewMemberList = data));
   }
-
 }

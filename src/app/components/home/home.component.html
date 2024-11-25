@@ -1,14 +1,63 @@
-<mat-table [dataSource]="crewMemberList" class="mat-elevation-z8">
+<mat-table [dataSource]="crewMemberList" class="mat-elevation-z8 crew-table">
+
+  <!-- First Name Column -->
   <ng-container matColumnDef="firstName">
-    <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{ element.firstName }} </mat-cell>
+    <mat-header-cell *matHeaderCellDef class="header-cell"> First Name </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.firstName }} </mat-cell>
   </ng-container>
 
+  <!-- Last Name Column -->
   <ng-container matColumnDef="lastName">
-    <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{ element.lastName }} </mat-cell>
+    <mat-header-cell *matHeaderCellDef class="header-cell"> Last Name </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.lastName }} </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="['firstName', 'lastName']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['firstName', 'lastName']"></mat-row>
+  <!-- Nationality Column -->
+  <ng-container matColumnDef="nationality">
+    <mat-header-cell *matHeaderCellDef class="header-cell"> Nationality </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.nationality }} </mat-cell>
+  </ng-container>
+
+  <!-- Title Column -->
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef class="header-cell"> Title </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.title }} </mat-cell>
+  </ng-container>
+
+  <!-- Days On Board Column -->
+  <ng-container matColumnDef="daysOnBoard">
+    <mat-header-cell *matHeaderCellDef class="header-cell"> Days On Board </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.daysOnBoard }} </mat-cell>
+  </ng-container>
+
+  <!-- Daily Rate Column -->
+  <ng-container matColumnDef="dailyRate">
+    <mat-header-cell *matHeaderCellDef class="header-cell"> Daily Rate </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.dailyRate }} </mat-cell>
+  </ng-container>
+
+  <!-- Currency Column -->
+  <ng-container matColumnDef="currency">
+    <mat-header-cell *matHeaderCellDef class="header-cell"> Currency </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.currency }} </mat-cell>
+  </ng-container>
+
+  <!-- Certificates Column -->
+  <ng-container matColumnDef="certificates">
+    <mat-header-cell *matHeaderCellDef class="header-cell"> Certificates </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="data-cell">
+      <ul>
+        <li *ngFor="let cert of element.certificates">
+          {{ cert.type }} ({{ cert.issueDate }} - {{ cert.expiryDate }})
+        </li>
+      </ul>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Header Row -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+  <!-- Data Rows -->
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
 </mat-table>
