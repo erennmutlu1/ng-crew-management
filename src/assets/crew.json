@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "firstName": "John",
-    "lastName": "Doe",
-    "nationality": "American",
+    "firstName": "Erry",
+    "lastName": "Carlmicheal",
+    "nationality": "Dutch",
     "title": "Captain",
     "daysOnBoard": 120,
     "dailyRate": 200,
-    "currency": "USD",
+    "currency": "EUR",
     "certificates": [
-      { "id": 1, "type": "Seamanship", "issueDate": "2023-01-01", "expiryDate": "2025-01-01" }
+      { "id": 1, "type": "Seamanship", "issueDate": "2020-01-01", "expiryDate": "2021-01-01" }
     ]
   }
 ]
