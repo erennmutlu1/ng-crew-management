@@ -1,19 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CrewService } from '../../services/crew.service';
-import { Crew } from '../../models/crew.model';
-import { MatTableModule } from '@angular/material/table';
+import { CrewMember } from '../../models/crew-member.model';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [
-    MatTableModule
-  ]
 })
 export class HomeComponent implements OnInit {
-  crewList: Crew[] = [];
+  crewMemberList: CrewMember[] = [];
 
   constructor(private crewService: CrewService) {}
 
@@ -22,6 +17,15 @@ export class HomeComponent implements OnInit {
   }
 
   loadCrew(): void {
-    this.crewService.getCrewList().subscribe((data) => (this.crewList = data));
+    this.crewService.getCrewMemberList().subscribe(
+      (data) => {
+        console.log('Fetched Crew Data:', data); // Log fetched data
+        this.crewMemberList = data;
+      },
+      (error) => {
+        console.error('Error fetching crew data:', error); // Log any errors
+      }
+    );
   }
+
 }
