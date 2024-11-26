@@ -23,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CrewCertificateComponent } from './components/modals/crew-certificate/crew-certificate.component';
 import { EditCrewMemberComponent } from './components/modals/actions/edit-crew-member/edit-crew-member.component';
+import { AddCrewMemberComponent } from './components/modals/actions/add-crew-member/add-crew-member.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -32,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     CrewMemberListComponent,
     CrewCertificateComponent,
-    EditCrewMemberComponent
+    EditCrewMemberComponent,
+    AddCrewMemberComponent
   ],
   imports: [
     BrowserAnimationsModule,

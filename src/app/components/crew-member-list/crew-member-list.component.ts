@@ -5,6 +5,8 @@ import { CrewMember } from '../../models/crew-member.model';
 import { CrewService } from '../../services/crew.service';
 import { CrewCertificateComponent } from '../modals/crew-certificate/crew-certificate.component';
 import { EditCrewMemberComponent } from '../modals/actions/edit-crew-member/edit-crew-member.component';
+import { AddCrewMemberComponent } from '../modals/actions/add-crew-member/add-crew-member.component';
+
 
 @Component({
   selector: 'app-crew-member-list',
@@ -54,6 +56,23 @@ export class CrewMemberListComponent {
         this.crewService.editCrew(data, crewIndex);
         this.loadCrew();
         this.snackBar.open('Crew member edited successfully!', 'Close', {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'left',
+        });
+      }
+    });
+  }
+  openAddModal(): void {
+    const dialogRef = this.dialog.open(AddCrewMemberComponent, {
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe((newCrewMember: CrewMember) => {
+      if (newCrewMember) {
+        this.crewService.addCrew(newCrewMember);
+        this.loadCrew();
+        this.snackBar.open('Crew member added successfully!', 'Close', {
           duration: 3000,
           verticalPosition: 'bottom',
           horizontalPosition: 'left',
