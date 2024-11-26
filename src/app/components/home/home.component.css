@@ -1,58 +1,13 @@
-/* Style the table container */
-.crew-table {
-  width: 100%;
-  margin: 20px auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+.mat-toolbar {
+  background-color: #c75233;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-/* Header cell styles */
-.header-cell {
-  background-color: #3f51b5; /* Angular Material Blue */
-  color: #020202;
-  font-weight: bold;
-  text-align: left;
-  padding: 16px;
-  border-bottom: 2px solid #303f9f;
-  font-size: 14px;
+body {
+  background-color: #d6ceaa !important;
 }
 
-/* Data cell styles */
-.data-cell {
-  text-align: left;
-  padding: 16px;
-  font-size: 14px;
-  color: #333333;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-/* Add hover effect on rows */
-mat-row:hover {
-  background-color: #f5f5f5;
-  cursor: pointer;
-}
-
-/* Certificates List */
-.data-cell ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  font-size: 12px;
-  color: #555555;
-}
-
-.data-cell ul li {
-  margin-bottom: 4px;
-}
-
-/* Style the table container when no data */
-mat-table {
-  min-height: 200px;
-}
-
-/* Add padding around the table */
-mat-table.crew-table {
-  padding: 10px;
+.content {
+  background-color: #d6ceaa !important;
 }
