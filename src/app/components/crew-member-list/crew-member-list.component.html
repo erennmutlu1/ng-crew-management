@@ -50,16 +50,15 @@
   <!-- Actions Column -->
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
-    <td mat-cell *matCellDef="let element; let elementIndex=index">
-      <button mat-icon-button color="primary" (click)="openEditModal(element,elementIndex)">
+    <td mat-cell *matCellDef="let element; let elementIndex = index">
+      <button mat-icon-button color="primary" (click)="openEditModal(element, elementIndex)">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" (click)="openDeleteModal(element)">
+      <button mat-icon-button color="warn" (click)="deleteCrew(elementIndex)">
         <mat-icon>delete</mat-icon>
       </button>
     </td>
   </ng-container>
-
   <!-- Header Row -->
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <!-- Data Rows -->

@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CrewMember } from '../../models/crew-member.model';
 import { CrewService } from '../../services/crew.service';
-import { MatDialog } from '@angular/material/dialog';
 import { CrewCertificateComponent } from '../modals/crew-certificate/crew-certificate.component';
 import { EditCrewMemberComponent } from '../modals/actions/edit-crew-member/edit-crew-member.component';
-import { DeleteCrewMemberComponent } from '../modals/actions/delete-crew-member/delete-crew-member.component';
+
 @Component({
   selector: 'app-crew-member-list',
   templateUrl: './crew-member-list.component.html',
-  styleUrl: './crew-member-list.component.css'
+  styleUrls: ['./crew-member-list.component.css'],
 })
 export class CrewMemberListComponent {
   crewMemberList: CrewMember[] = [];
@@ -21,10 +22,10 @@ export class CrewMemberListComponent {
     'dailyRate',
     'currency',
     'certificates',
-    'actions'
+    'actions',
   ];
 
-  constructor(private crewService: CrewService, public dialog: MatDialog) {}
+  constructor(private crewService: CrewService, public dialog: MatDialog, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.loadCrew();
@@ -34,35 +35,40 @@ export class CrewMemberListComponent {
     this.crewService.getCrewMemberList().subscribe((data) => (this.crewMemberList = data));
   }
 
-  showCertificateModal(certificate: any) {
+  showCertificateModal(certificate: any): void {
     this.dialog.open(CrewCertificateComponent, {
       width: '600px',
-      data: certificate
-    })
+      data: certificate,
+    });
   }
 
-  openEditModal(crewMember: CrewMember, crewIndex:number): void {
+  openEditModal(crewMember: CrewMember, crewIndex: number): void {
     const dialogRef = this.dialog.open(EditCrewMemberComponent, {
       width: '600px',
       data: crewMember,
     });
 
-    dialogRef.afterClosed().subscribe(data => {
+    dialogRef.afterClosed().subscribe((data) => {
       console.log('result', data);
       if (data) {
         this.crewService.editCrew(data, crewIndex);
-        // Fetch the updated crew list
-      this.loadCrew();
+        this.loadCrew();
+        this.snackBar.open('Crew member edited successfully!', 'Close', {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'left',
+        });
       }
     });
-
   }
 
-  openDeleteModal(crewMember: CrewMember): void {
-    this.dialog.open(DeleteCrewMemberComponent, {
-      width: '400px',
-      data: crewMember,
+  deleteCrew(index: number): void {
+    this.crewService.deleteCrew(index);
+    this.loadCrew();
+    this.snackBar.open('Crew member deleted successfully!', 'Close', {
+      duration: 3000,
+      verticalPosition: 'bottom',
+      horizontalPosition: 'left',
     });
   }
-
 }
