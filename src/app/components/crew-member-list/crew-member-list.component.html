@@ -1,61 +1,67 @@
-<mat-table [dataSource]="crewMemberList" class="mat-elevation-z8 crew-table">
-
+<table mat-table [dataSource]="crewMemberList" class="mat-elevation-z8">
   <!-- First Name Column -->
   <ng-container matColumnDef="firstName">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> First Name </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.firstName }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> First Name </th>
+    <td mat-cell *matCellDef="let element"> {{ element.firstName }} </td>
   </ng-container>
 
   <!-- Last Name Column -->
   <ng-container matColumnDef="lastName">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> Last Name </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.lastName }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{ element.lastName }} </td>
   </ng-container>
 
   <!-- Nationality Column -->
   <ng-container matColumnDef="nationality">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> Nationality </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.nationality }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> Nationality </th>
+    <td mat-cell *matCellDef="let element"> {{ element.nationality }} </td>
   </ng-container>
 
   <!-- Title Column -->
   <ng-container matColumnDef="title">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> Title </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.title }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> {{ element.title }} </td>
   </ng-container>
 
-  <!-- Days On Board Column -->
+  <!-- Days on Board Column -->
   <ng-container matColumnDef="daysOnBoard">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> Days On Board </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.daysOnBoard }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> Days On Board </th>
+    <td mat-cell *matCellDef="let element"> {{ element.daysOnBoard }} </td>
   </ng-container>
 
   <!-- Daily Rate Column -->
   <ng-container matColumnDef="dailyRate">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> Daily Rate </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.dailyRate }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> Daily Rate </th>
+    <td mat-cell *matCellDef="let element"> {{ element.dailyRate }}</td>
   </ng-container>
-
   <!-- Currency Column -->
   <ng-container matColumnDef="currency">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> Currency </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell"> {{ element.currency }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> Currency </th>
+    <td mat-cell *matCellDef="let element"> {{ element.currency }} </td>
   </ng-container>
-
   <!-- Certificates Column -->
   <ng-container matColumnDef="certificates">
-    <mat-header-cell *matHeaderCellDef class="header-cell"> Certificates </mat-header-cell>
-    <mat-cell *matCellDef="let element">
-      <button mat-icon-button (click)="showCertificateModal(element.certificates)">
-        <mat-icon>visibility</mat-icon>
+    <th mat-header-cell *matHeaderCellDef> Certificates </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="showCertificateModal(element.certificates)">View</button>
+    </td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element; let elementIndex=index">
+      <button mat-icon-button color="primary" (click)="openEditModal(element,elementIndex)">
+        <mat-icon>edit</mat-icon>
       </button>
-    </mat-cell>
+      <button mat-icon-button color="warn" (click)="openDeleteModal(element)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
   </ng-container>
 
   <!-- Header Row -->
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <!-- Data Rows -->
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-</mat-table>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

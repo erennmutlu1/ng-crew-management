@@ -1,0 +1,98 @@
+<h2 mat-dialog-title>Edit Crew Member</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+  <form [formGroup]="editCrewForm" (ngSubmit)="onSave()">
+
+    <mat-tab-group>
+      <!-- Crew Member Information Tab -->
+      <mat-tab label="Crew Member Information">
+        <mat-form-field appearance="fill" style="margin-top: 15px;">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First Name" formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <mat-select formControlName="title">
+            <mat-option *ngFor="let title of titles" [value]="title">{{title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Nationality</mat-label>
+          <mat-select formControlName="nationality">
+            <mat-option *ngFor="let nationality of nationalities" [value]="nationality">
+              {{nationality}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Currency</mat-label>
+          <mat-select formControlName="currency">
+            <mat-option value="USD">USD</mat-option>
+            <mat-option value="EUR">EUR</mat-option>
+            <mat-option value="GBP">GBP</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Daily Rate</mat-label>
+          <input matInput placeholder="Daily Rate" formControlName="dailyRate" type="number">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Days on Board</mat-label>
+          <input matInput placeholder="Days on Board" formControlName="daysOnBoard" type="number">
+        </mat-form-field>
+      </mat-tab>
+
+      <!-- Certificates Tab -->
+      <mat-tab label="Certificate">
+        <div formArrayName="certificates">
+          <div *ngFor="let cert of certificates.controls; let i=index" [formGroupName]="i">
+            <mat-form-field appearance="fill">
+              <mat-label>Certificate Type</mat-label>
+              <!-- Using mat-select for certificate types -->
+              <mat-select formControlName="type">
+                <mat-option *ngFor="let type of certificateTypes" [value]="type.name">{{ type.name }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Issue Date</mat-label>
+              <input matInput formControlName="issueDate" type="date">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Expiry Date</mat-label>
+              <input matInput formControlName="expiryDate" type="date">
+            </mat-form-field>
+
+            <button mat-raised-button color="warn" (click)="removeCertificate(i)">Remove Certificate</button>
+          </div>
+        </div>
+        <button mat-raised-button color="primary" (click)="addCertificate()">Add Certificate</button>
+      </mat-tab>
+
+
+
+
+
+
+
+
+
+    </mat-tab-group>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()"> Cancel</button>
+  <button mat-button [disabled]="editCrewForm.status !== 'VALID'" (click)="onSave()"> Save</button>
+</mat-dialog-actions>

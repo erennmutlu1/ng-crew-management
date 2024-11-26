@@ -22,7 +22,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CrewCertificateComponent } from './components/modals/crew-certificate/crew-certificate.component';
-
+import { EditCrewMemberComponent } from './components/modals/actions/edit-crew-member/edit-crew-member.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CrewCertificateComponent } from './components/modals/crew-certificate/c
     AppComponent,
     HomeComponent,
     CrewMemberListComponent,
-    CrewCertificateComponent
+    CrewCertificateComponent,
+    EditCrewMemberComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -48,7 +50,9 @@ import { CrewCertificateComponent } from './components/modals/crew-certificate/c
     MatCardModule,
     MatTabsModule,
     MatSnackBarModule,
+    FormsModule,
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
   providers: [
