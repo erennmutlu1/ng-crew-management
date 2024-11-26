@@ -1,0 +1,48 @@
+<div class="header">
+  <mat-toolbar>
+    Header
+  </mat-toolbar>
+</div>
+<div class="back-icon">
+  <button mat-icon-button [routerLink]="['/']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+<div>
+  <mat-tab-group>
+    <!-- Crew Member Information Tab -->
+    <mat-tab label="Crew Member Information">
+      <div class="crew-details">
+        <mat-card class="crew-info-card">
+          <mat-card-header>
+            <mat-card-title>Crew Member Information</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="tab-content">
+            <p><strong>First Name:</strong> {{ crewData?.firstName }}</p>
+            <p><strong>Last Name:</strong> {{ crewData?.lastName }}</p>
+            <p><strong>Title:</strong> {{ crewData?.title }}</p>
+            <p><strong>Nationality:</strong> {{ crewData?.nationality }}</p>
+            <p><strong>Daily Rate:</strong> {{ crewData?.dailyRate | currency: crewData?.currency }}</p>
+            <p><strong>Days On Board:</strong> {{ crewData?.daysOnBoard }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+
+    <!-- Certificates Tab -->
+    <mat-tab label="Certificates">
+      <div class="certificates-list">
+        <mat-card class="certificate-card" *ngFor="let cert of crewData?.certificates">
+          <mat-card-header>
+            <mat-card-title>{{ cert.type }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Issue Date:</strong> {{ cert.issueDate }}</p>
+            <p><strong>Expiry Date:</strong> {{ cert.expiryDate }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

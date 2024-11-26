@@ -26,6 +26,7 @@ import { EditCrewMemberComponent } from './components/modals/actions/edit-crew-m
 import { AddCrewMemberComponent } from './components/modals/actions/add-crew-member/add-crew-member.component';
 import { CreateCertificatePageComponent } from './components/create-certificate-page/create-certificate-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrewCardPageComponent } from './components/modals/actions/crew-card-page/crew-card-page.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrewCertificateComponent,
     EditCrewMemberComponent,
     AddCrewMemberComponent,
-    CreateCertificatePageComponent
+    CreateCertificatePageComponent,
+    CrewCardPageComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -6,6 +6,7 @@ import { CrewService } from '../../services/crew.service';
 import { CrewCertificateComponent } from '../modals/crew-certificate/crew-certificate.component';
 import { EditCrewMemberComponent } from '../modals/actions/edit-crew-member/edit-crew-member.component';
 import { AddCrewMemberComponent } from '../modals/actions/add-crew-member/add-crew-member.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class CrewMemberListComponent {
     'actions',
   ];
 
-  constructor(private crewService: CrewService, public dialog: MatDialog, private snackBar: MatSnackBar) {}
+  constructor(private crewService: CrewService, public dialog: MatDialog, private snackBar: MatSnackBar, private router: Router) {}
 
   ngOnInit(): void {
     this.loadCrew();
@@ -89,5 +90,9 @@ export class CrewMemberListComponent {
       verticalPosition: 'bottom',
       horizontalPosition: 'left',
     });
+  }
+
+  navigateToCrewCard(index: number): void {
+    this.router.navigate(['/crew-card-information', index]);
   }
 }
