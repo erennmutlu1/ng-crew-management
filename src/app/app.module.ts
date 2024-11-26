@@ -20,7 +20,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { CrewCertificateComponent } from './components/modals/crew-certificate/crew-certificate.component';
 
 
 
@@ -28,7 +29,8 @@ import { MatToolbarModule } from '@angular/material/toolbar'
   declarations: [
     AppComponent,
     HomeComponent,
-    CrewMemberListComponent
+    CrewMemberListComponent,
+    CrewCertificateComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -45,12 +45,10 @@
   <!-- Certificates Column -->
   <ng-container matColumnDef="certificates">
     <mat-header-cell *matHeaderCellDef class="header-cell"> Certificates </mat-header-cell>
-    <mat-cell *matCellDef="let element" class="data-cell">
-      <ul>
-        <li *ngFor="let cert of element.certificates">
-          {{ cert.type }} ({{ cert.issueDate }} - {{ cert.expiryDate }})
-        </li>
-      </ul>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="showCertificateModal(element.certificates)">
+        <mat-icon>visibility</mat-icon>
+      </button>
     </mat-cell>
   </ng-container>
 
