@@ -1,0 +1,72 @@
+{
+  "Crew Management System": "Sistema de Gestão de Tripulação",
+  "Language": "Idioma",
+  "English": "Inglês",
+  "France": "Francês",
+  "Portuguese": "Português",
+  "Edit Crew Member": "Editar Membro da Tripulação",
+  "Add Crew Member": "Adicionar Membro da Tripulação",
+  "Create Certificate": "Criar Certificado",
+  "crew": {
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "nationality": "Nacionalidade",
+    "title": "Título",
+    "dailyRate": "Taxa Diária",
+    "daysOnBoard": "Dias a Bordo",
+    "currency": "Moeda",
+    "totalIncome": "Rendimento Total",
+    "certificates": "Certificados",
+    "certificateType": "Tipo de Certificado",
+    "issueDate": "Data de Emissão",
+    "expiryDate": "Data de Validade",
+    "crewMemberInformation": "Informações do Membro da Tripulação",
+    "certificate": "Certificado"
+  },
+  "actions": {
+    "header": "Ações",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "viewCertificates": "Ver Certificados",
+    "removeCertificate": "Remover Certificado",
+    "addCertificate": "Adicionar Certificado",
+    "viewDetails": "Ver Detalhes",
+    "cancel": "Cancelar",
+    "save": "Salvar"
+  },
+  "Close": "Fechar",
+  "View": "Visualizar",
+  "messages": {
+    "addSuccess": "Membro da tripulação adicionado com sucesso!",
+    "editSuccess": "Membro da tripulação atualizado com sucesso!",
+    "deleteSuccess": "Membro da tripulação excluído com sucesso!"
+  },
+  "titles": {
+    "Captain": "Capitão",
+    "First Officer": "Primeiro Oficial",
+    "Second Officer": "Segundo Oficial",
+    "Cooker": "Cozinheiro",
+    "Mechanicer": "Mecânico",
+    "Radio Operator": "Operador de Rádio",
+    "Software Developer": "Desenvolvedor de Software"
+  },
+  "nationalities": {
+    "Russian": "Russo",
+    "Ukranian": "Ucraniano",
+    "German": "Alemão",
+    "French": "Francês",
+    "Argentinian": "Argentino",
+    "Dutch": "Holandês",
+    "Norwegian": "Norueguês",
+    "Swedish": "Sueco",
+    "Turkish": "Turco",
+    "Spainish": "Espanhol",
+    "British": "Britânico",
+    "Polish": "Polonês"
+  },
+  "certificateTypes": {
+    "name": "Nome do Certificado",
+    "description": "Descrição do Certificado",
+    "add": "Adicionar"
+  }
+}

@@ -1,0 +1,10 @@
+button[mat-menu-item] {
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  margin-right: 8px;
+  object-fit: contain;
+  vertical-align: middle;
+}

@@ -1,0 +1,72 @@
+{
+  "Crew Management System": "Crew Management System",
+  "Language": "Language",
+  "English": "English",
+  "France": "France",
+  "Portuguese": "Portuguese",
+  "Edit Crew Member": "Edit Crew Member",
+  "Add Crew Member": "Add Crew Member",
+  "Create Certificate": "Create Certificate",
+  "crew": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "nationality": "Nationality",
+    "title": "Title",
+    "dailyRate": "Daily Rate",
+    "daysOnBoard": "Days On Board",
+    "currency": "Currency",
+    "totalIncome": "Total Income",
+    "certificates": "Certificates",
+    "certificateType": "Certificate Type",
+    "issueDate": "Issue Date",
+    "expiryDate": "Expiry Date",
+    "crewMemberInformation": "Crew Member Information",
+    "certificate": "Certificate"
+  },
+  "actions": {
+    "header": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "viewCertificates": "View Certificates",
+    "removeCertificate": "Remove Certificate",
+    "addCertificate": "Add Certificate",
+    "viewDetails": "View Details",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "Close": "Close",
+  "View": "View",
+  "messages": {
+    "addSuccess": "Crew member added successfully!",
+    "editSuccess": "Crew member updated successfully!",
+    "deleteSuccess": "Crew member deleted successfully!"
+  },
+  "titles": {
+    "Captain": "Captain",
+    "First Officer": "First Officer",
+    "Second Officer": "Second Officer",
+    "Cooker": "Cook",
+    "Mechanicer": "Mechanic",
+    "Radio Operator": "Radio Operator",
+    "Software Developer": "Software Developer"
+  },
+  "nationalities": {
+   "Russian": "Russian",
+    "Ukranian": "Ukranian",
+    "German": "German",
+    "French": "French",
+    "Argentinian": "Argentinian",
+    "Dutch": "Dutch",
+    "Norwegian": "Norwegian",
+    "Swedish": "Swedish",
+    "Turkish": "Turkish",
+    "Spainish": "Spainish",
+    "British": "British",
+    "Polish": "Polish"
+  },
+  "certificateTypes": {
+    "name": "Certificate Name",
+    "description": "Certificate Description",
+    "add": "Add"
+  }
+}

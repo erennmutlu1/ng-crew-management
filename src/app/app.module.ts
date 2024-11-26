@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { routes } from './app.routes';
 import { MatTableModule } from '@angular/material/table';
@@ -27,8 +27,13 @@ import { AddCrewMemberComponent } from './components/modals/actions/add-crew-mem
 import { CreateCertificatePageComponent } from './components/create-certificate-page/create-certificate-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrewCardPageComponent } from './components/modals/actions/crew-card-page/crew-card-page.component';
+import { SelectLanguageComponent } from './components/select-language/select-language.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,10 +43,18 @@ import { CrewCardPageComponent } from './components/modals/actions/crew-card-pag
     EditCrewMemberComponent,
     AddCrewMemberComponent,
     CreateCertificatePageComponent,
-    CrewCardPageComponent
+    CrewCardPageComponent,
+    SelectLanguageComponent
   ],
   imports: [
     BrowserAnimationsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     HttpClientModule,
     MatTableModule,
     MatToolbarModule,

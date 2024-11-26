@@ -1,0 +1,72 @@
+{
+  "Crew Management System": "Système de Gestion d'Équipage",
+  "Language": "Langue",
+  "English": "Anglais",
+  "France": "Français",
+  "Portuguese": "Portugais",
+  "Edit Crew Member": "Modifier le Membre d'Équipage",
+  "Add Crew Member": "Ajouter un Membre d'Équipage",
+  "Create Certificate": "Créer un Certificat",
+  "crew": {
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "nationality": "Nationalité",
+    "title": "Titre",
+    "dailyRate": "Taux Journalier",
+    "daysOnBoard": "Jours à Bord",
+    "currency": "Devise",
+    "totalIncome": "Revenu Total",
+    "certificates": "Certificats",
+    "certificateType": "Type de Certificat",
+    "issueDate": "Date de Délivrance",
+    "expiryDate": "Date d'Expiration",
+    "crewMemberInformation": "Informations sur le Membre d'Équipage",
+    "certificate": "Certificat"
+  },
+  "actions": {
+    "header": "Actions",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "viewCertificates": "Voir les Certificats",
+    "removeCertificate": "Supprimer le Certificat",
+    "addCertificate": "Ajouter un Certificat",
+    "viewDetails": "Voir les Détails",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  },
+  "Close": "Fermer",
+  "View": "Voir",
+  "messages": {
+    "addSuccess": "Membre d'équipage ajouté avec succès !",
+    "editSuccess": "Membre d'équipage mis à jour avec succès !",
+    "deleteSuccess": "Membre d'équipage supprimé avec succès !"
+  },
+  "titles": {
+    "Captain": "Capitaine",
+    "First Officer": "Premier Officier",
+    "Second Officer": "Second Officier",
+    "Cooker": "Cuisinier",
+    "Mechanicer": "Mécanicien",
+    "Radio Operator": "Opérateur Radio",
+    "Software Developer": "Développeur Logiciel"
+  },
+  "nationalities": {
+    "Russian": "Russe",
+    "Ukranian": "Ukrainien",
+    "German": "Allemand",
+    "French": "Français",
+    "Argentinian": "Argentin",
+    "Dutch": "Néerlandais",
+    "Norwegian": "Norvégien",
+    "Swedish": "Suédois",
+    "Turkish": "Turc",
+    "Spainish": "Espagnol",
+    "British": "Britannique",
+    "Polish": "Polonais"
+  },
+  "certificateTypes": {
+    "name": "Nom du Certificat",
+    "description": "Description du Certificat",
+    "add": "Ajouter"
+  }
+}
