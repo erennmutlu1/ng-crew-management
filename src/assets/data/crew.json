@@ -11,5 +11,57 @@
     "certificates": [
       { "id": 1, "type": "Seamanship", "issueDate": "2020-01-01", "expiryDate": "2021-01-01" }
     ]
+  },
+  {
+    "id": 2,
+    "firstName": "Alisch",
+    "lastName": "Butcher",
+    "nationality": "German",
+    "title": "Mechanicer",
+    "daysOnBoard": 120,
+    "dailyRate": 200,
+    "currency": "EUR",
+    "certificates": [
+      { "id": 1, "type": "Mechanicer", "issueDate": "2020-01-01", "expiryDate": "2021-01-01" }
+    ]
+  },
+  {
+    "id": 3,
+    "firstName": "Dennis",
+    "lastName": "Whitestone",
+    "nationality": "British",
+    "title": "Engineer",
+    "daysOnBoard": 150,
+    "dailyRate": 180,
+    "currency": "GBP",
+    "certificates": [
+      { "id": 2, "type": "Engine Maintenance", "issueDate": "2019-06-15", "expiryDate": "2023-06-15" }
+    ]
+  },
+  {
+    "id": 4,
+    "firstName": "Eric",
+    "lastName": "Aghella",
+    "nationality": "Spanish",
+    "title": "Cooker",
+    "daysOnBoard": 100,
+    "dailyRate": 150,
+    "currency": "EUR",
+    "certificates": [
+      { "id": 3, "type": "Culinary Arts", "issueDate": "2021-03-01", "expiryDate": "2025-03-01" }
+    ]
+  },
+  {
+    "id": 5,
+    "firstName": "Rodinn",
+    "lastName": "Miran",
+    "nationality": "Polish",
+    "title": "Deckhand",
+    "daysOnBoard": 90,
+    "dailyRate": 100,
+    "currency": "USD",
+    "certificates": [
+      { "id": 4, "type": "Basic Safety Training", "issueDate": "2022-01-10", "expiryDate": "2024-01-10" }
+    ]
   }
 ]
