@@ -1,0 +1,33 @@
+.icon {
+  margin-right: 15px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.full-width {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.add-form-class {
+  width: 50%;
+  margin: auto;
+}
+
+.back-icon {
+  margin-left: 15px;
+}
+
+.mat-toolbar {
+  background-color: #c75233;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

@@ -1,7 +1,9 @@
 <div>
   <button mat-raised-button color="primary" (click)="openAddModal()">Add Crew Member</button>
 </div>
-
+<div>
+  <button mat-raised-button color="accent" [routerLink]="['/create-certificate-page']"> Create Certificate</button>
+</div>
 <table mat-table [dataSource]="crewMemberList" class="mat-elevation-z8">
   <!-- First Name Column -->
   <ng-container matColumnDef="firstName">
