@@ -50,7 +50,7 @@ export class AddCrewMemberComponent implements OnInit {
 
   // Dropdown values for nationalities
   getNationalities(): string[] {
-    return ['Russian', 'Ukranian', 'German', 'French', 'Argentinian', 'Dutch', 'Norwegian', 'Swedish', 'Turkish', 'Spainish', 'British', 'Polish'];
+    return ['Russian', 'Ukranian', 'German', 'French', 'Argentinian', 'Dutch', 'Norwegian', 'Swedish', 'Turkish', 'Spanish', 'British', 'Polish'];
   }
 
   // Dropdown values for titles

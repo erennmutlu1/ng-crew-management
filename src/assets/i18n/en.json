@@ -7,6 +7,7 @@
   "Edit Crew Member": "Edit Crew Member",
   "Add Crew Member": "Add Crew Member",
   "Create Certificate": "Create Certificate",
+  "Total Income Summary": "Résumé des Revenus Totaux",
   "crew": {
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -60,13 +61,13 @@
     "Norwegian": "Norwegian",
     "Swedish": "Swedish",
     "Turkish": "Turkish",
-    "Spainish": "Spainish",
+    "Spanish": "Spanish",
     "British": "British",
     "Polish": "Polish"
   },
-  "certificateTypes": {
+  "certificates": {
     "name": "Certificate Name",
     "description": "Certificate Description",
-    "add": "Add"
+    "add": "Create"
   }
 }

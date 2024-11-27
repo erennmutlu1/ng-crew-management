@@ -7,6 +7,9 @@
   "Edit Crew Member": "Editar Membro da Tripulação",
   "Add Crew Member": "Adicionar Membro da Tripulação",
   "Create Certificate": "Criar Certificado",
+  "Certificate List": "Lista de Certificados",
+  "Total Income Summary": "Resumo da Renda Total",
+  "Actions": "Ações",
   "crew": {
     "firstName": "Nome",
     "lastName": "Sobrenome",
@@ -60,11 +63,11 @@
     "Norwegian": "Norueguês",
     "Swedish": "Sueco",
     "Turkish": "Turco",
-    "Spainish": "Espanhol",
+    "Spanish": "Espanhol",
     "British": "Britânico",
     "Polish": "Polonês"
   },
-  "certificateTypes": {
+  "certificates": {
     "name": "Nome do Certificado",
     "description": "Descrição do Certificado",
     "add": "Adicionar"

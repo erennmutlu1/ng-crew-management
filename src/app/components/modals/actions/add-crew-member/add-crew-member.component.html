@@ -1,39 +1,39 @@
-<h2 mat-dialog-title>Add Crew Member</h2>
+<h2 mat-dialog-title>{{'Add Crew Member' | translate }}</h2>
 <mat-divider></mat-divider>
 
 <mat-dialog-content>
   <form [formGroup]="addCrewForm" (ngSubmit)="onSave()">
     <mat-tab-group>
       <!-- Crew Member Information Tab -->
-      <mat-tab label="Crew Member Information">
+      <mat-tab label="{{'crew.crewMemberInformation' | translate }}">
         <mat-form-field appearance="fill">
-          <mat-label>First Name</mat-label>
-          <input matInput placeholder="First Name" formControlName="firstName">
+          <mat-label>{{'crew.firstName' | translate }}</mat-label>
+          <input matInput placeholder="{{'crew.firstName' | translate }}" formControlName="firstName">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Last Name</mat-label>
-          <input matInput placeholder="Last Name" formControlName="lastName">
+          <mat-label>{{'crew.lastName' | translate }}</mat-label>
+          <input matInput placeholder="{{'crew.lastName' | translate }}" formControlName="lastName">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Title</mat-label>
+          <mat-label>{{'crew.title' | translate }}</mat-label>
           <mat-select formControlName="title">
-            <mat-option *ngFor="let title of titles" [value]="title">{{ title }}</mat-option>
+            <mat-option *ngFor="let title of titles" [value]="title">{{ 'titles.' + title | translate }}</mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Nationality</mat-label>
+          <mat-label>{{'crew.nationality' | translate }}</mat-label>
           <mat-select formControlName="nationality">
             <mat-option *ngFor="let nationality of nationalities" [value]="nationality">
-              {{ nationality }}
+              {{'nationalities.' + nationality | translate }}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Currency</mat-label>
+          <mat-label>{{'crew.currency' | translate }}</mat-label>
           <mat-select formControlName="currency">
             <mat-option value="USD">USD</mat-option>
             <mat-option value="EUR">EUR</mat-option>
@@ -42,45 +42,48 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Daily Rate</mat-label>
-          <input matInput placeholder="Daily Rate" formControlName="dailyRate" type="number">
+          <mat-label>{{'crew.dailyRate' | translate }}</mat-label>
+          <input matInput placeholder="{{'crew.dailyRate'}}" formControlName="dailyRate" type="number">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Days on Board</mat-label>
-          <input matInput placeholder="Days on Board" formControlName="daysOnBoard" type="number">
+          <mat-label>{{'crew.daysOnBoard' | translate }}</mat-label>
+          <input matInput placeholder="{{'crew.daysOnBoard' | translate }}" formControlName="daysOnBoard" type="number">
         </mat-form-field>
       </mat-tab>
 
       <!-- Certificates Tab -->
-      <mat-tab label="Certificates">
+      <mat-tab label="{{'crew.certificates' | translate }}">
         <div formArrayName="certificates">
           <div *ngFor="let cert of certificates.controls; let i = index" [formGroupName]="i">
             <mat-form-field appearance="fill">
-              <mat-label>Certificate Type</mat-label>
+              <mat-label>{{'certificates.name' | translate }}</mat-label>
               <mat-select formControlName="type">
                 <mat-option *ngFor="let type of certificateTypes" [value]="type.name">{{ type.name }}</mat-option>
               </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
-              <mat-label>Issue Date</mat-label>
+              <mat-label>{{'crew.issueDate' | translate }}</mat-label>
               <input matInput formControlName="issueDate" type="date">
             </mat-form-field>
 
             <mat-form-field appearance="fill">
-              <mat-label>Expiry Date</mat-label>
+              <mat-label>{{'crew.expiryDate' | translate }}</mat-label>
               <input matInput formControlName="expiryDate" type="date">
             </mat-form-field>
           </div>
         </div>
-        <button mat-raised-button color="primary" (click)="addCertificate()">Add Certificate</button>
+        <button mat-raised-button color="primary" (click)="addCertificate()">{{'actions.addCertificate' | translate
+          }}</button>
       </mat-tab>
     </mat-tab-group>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-raised-button color="primary" [disabled]="addCrewForm.invalid" (click)="onSave()">Save</button>
+  <button mat-button (click)="onCancel()">{{'actions.cancel' | translate }}</button>
+  <button mat-raised-button color="primary" [disabled]="addCrewForm.invalid" (click)="onSave()">{{'actions.save' |
+    translate
+    }}</button>
 </mat-dialog-actions>

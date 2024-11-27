@@ -1,23 +1,23 @@
-<h1 mat-dialog-title>Certificates</h1>
+<h1 mat-dialog-title>{{'crew.certificates' | translate }}</h1>
 <mat-divider></mat-divider>
 <div mat-dialog-content>
   <table mat-table [dataSource]="certificateData" class="mat-elevation-z8">
 
     <!-- Certificate Type -->
     <ng-container matColumnDef="certificateType">
-      <th mat-header-cell *matHeaderCellDef> Certificate Type </th>
+      <th mat-header-cell *matHeaderCellDef> {{'crew.certificate' | translate }} </th>
       <td mat-cell *matCellDef="let certificate"> {{certificate.type}} </td>
     </ng-container>
 
     <!-- Issue Date -->
     <ng-container matColumnDef="issueDate">
-      <th mat-header-cell *matHeaderCellDef> Issue Date </th>
+      <th mat-header-cell *matHeaderCellDef> {{'crew.issueDate' | translate }} </th>
       <td mat-cell *matCellDef="let certificate"> {{certificate.issueDate | date}} </td>
     </ng-container>
 
     <!-- Expiry Date -->
     <ng-container matColumnDef="expiryDate">
-      <th mat-header-cell *matHeaderCellDef> Expiry Date </th>
+      <th mat-header-cell *matHeaderCellDef> {{'crew.expiryDate' | translate }} </th>
       <td mat-cell *matCellDef="let certificate"> {{certificate.expiryDate | date}} </td>
     </ng-container>
 
@@ -26,5 +26,5 @@
   </table>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button mat-dialog-close>{{'Close' | translate }}</button>
 </div>

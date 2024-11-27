@@ -49,7 +49,7 @@ export class EditCrewMemberComponent implements OnInit {
   }
 
   getNationalities(): string[] {
-    return ['Russian', 'Ukranian', 'German', 'French', 'Argentinian', 'Dutch', 'Norwegian', 'Swedish', 'Turkish', 'Spainish', 'British', 'Polish'];
+    return ['Russian', 'Ukranian', 'German', 'French', 'Argentinian', 'Dutch', 'Norwegian', 'Swedish', 'Turkish', 'Spanish', 'British', 'Polish'];
   }
 
   getTitles(): string[] {

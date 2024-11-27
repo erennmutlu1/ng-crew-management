@@ -1,19 +1,19 @@
 <mat-menu #languageMenu="matMenu">
   <button mat-menu-item (click)="changeLanguage('en')">
     <img src="assets/icons/en.png" alt="English Flag" class="flag-icon">
-    English
+    {{'English' | translate }}
   </button>
   <button mat-menu-item (click)="changeLanguage('fr')">
     <img src="assets/icons/fr.png" alt="French Flag" class="flag-icon">
-    French
+    {{'French' | translate }}
   </button>
   <button mat-menu-item (click)="changeLanguage('pt')">
     <img src="assets/icons/pt.png" alt="Portuguese Flag" class="flag-icon">
-    Portuguese
+    {{'Portuguese' | translate }}
   </button>
 </mat-menu>
 
 <button mat-button [matMenuTriggerFor]="languageMenu">
   <mat-icon>translate</mat-icon>
-  Language
+  {{'Language' | translate }}
 </button>
