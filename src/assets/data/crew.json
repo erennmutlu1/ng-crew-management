@@ -63,5 +63,18 @@
     "certificates": [
       { "id": 4, "type": "Marine Tech Innovator", "issueDate": "2022-01-10", "expiryDate": "2024-01-10" }
     ]
+  },
+  {
+    "id": 6,
+    "firstName": "Rose",
+    "lastName": "Whitewolf",
+    "nationality": "British",
+    "title": "Software Developer",
+    "daysOnBoard": 110,
+    "dailyRate": 210,
+    "currency": "GBP",
+    "certificates": [
+      { "id": 4, "type": "Seamanship Mastery", "issueDate": "2022-01-10", "expiryDate": "2024-01-10" }
+    ]
   }
 ]
