@@ -75,12 +75,10 @@
               <input matInput formControlName="expiryDate" type="date">
             </mat-form-field>
 
-            <button mat-raised-button color="warn" (click)="removeCertificate(i)">
-              {{'actions.removeCertificate' | translate }}</button>
+            <button mat-raised-button color="warn">{{'actions.removeCertificate' | translate }}</button>
+            <button mat-raised-button color="primary">{{'actions.addCertificate' | translate }}</button>
           </div>
         </div>
-        <button mat-raised-button color="primary" (click)="addCertificate()">{{'actions.addCertificate' | translate
-          }}</button>
       </mat-tab>
     </mat-tab-group>
   </form>

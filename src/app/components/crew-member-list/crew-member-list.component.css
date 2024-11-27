@@ -1,0 +1,35 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.crew-button {
+  display: flex;
+  margin: 15px 0 15px 15px;
+  gap: 10px;
+}
+
+.crew-table {
+  width: 100%;
+}
+
+.total-income {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0 0 0;
+  margin-left: 30px;
+  margin-inline-end: auto;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.total-income p {
+  margin: 0 0 10px 0;
+}

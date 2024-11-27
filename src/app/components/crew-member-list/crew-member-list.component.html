@@ -1,91 +1,92 @@
-<div>
-  <button mat-raised-button color="primary" (click)="openAddModal()">{{'Add Crew Member' | translate }}</button>
+<div class="content">
+  <table mat-table [dataSource]="crewMemberList" class="mat-elevation-z8">
+    <!-- First Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.firstName' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element.firstName }} </td>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.lastName' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element.lastName }} </td>
+    </ng-container>
+
+    <!-- Nationality Column -->
+    <ng-container matColumnDef="nationality">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.nationality' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{'nationalities.' + element.nationality | translate }} </td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.title' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{'titles.' + element.title | translate }}</td>
+    </ng-container>
+
+    <!-- Days on Board Column -->
+    <ng-container matColumnDef="daysOnBoard">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.daysOnBoard' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element.daysOnBoard }} </td>
+    </ng-container>
+
+    <!-- Daily Rate Column -->
+    <ng-container matColumnDef="dailyRate">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.dailyRate' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element.dailyRate }}</td>
+    </ng-container>
+    <!-- Currency Column -->
+    <ng-container matColumnDef="currency">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.currency' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element.currency }} </td>
+    </ng-container>
+
+    <!-- Total Income Column -->
+    <ng-container matColumnDef="totalIncome">
+      <th mat-header-cell *matHeaderCellDef> {{'crew.totalIncome' | translate }} </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.dailyRate * element.daysOnBoard | currency: element.currency }}
+      </td>
+    </ng-container>
+
+
+    <!-- Certificates Column -->
+    <ng-container matColumnDef="certificates">
+      <th mat-header-cell *matHeaderCellDef> {{'certificates.name' | translate }} </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button (click)="showCertificateModal(element.certificates)">{{'View' | translate }}</button>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> {{'actions.header' | translate }} </th>
+      <td mat-cell *matCellDef="let element; let elementIndex = index">
+        <button mat-icon-button color="primary" (click)="openEditModal(element, elementIndex)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="navigateToCrewCard(elementIndex)">
+          <mat-icon>person</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteCrew(elementIndex)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <!-- Header Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- Data Rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
-<div>
+
+<div class="crew-button">
+  <button mat-raised-button color="primary" (click)="openAddModal()">{{'Add Crew Member' | translate }}</button>
   <button mat-raised-button color="accent" [routerLink]="['/create-certificate-page']">
     {{'Create Certificate' | translate }}</button>
 </div>
-<table mat-table [dataSource]="crewMemberList" class="mat-elevation-z8">
-  <!-- First Name Column -->
-  <ng-container matColumnDef="firstName">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.firstName' | translate }} </th>
-    <td mat-cell *matCellDef="let element"> {{ element.firstName }} </td>
-  </ng-container>
 
-  <!-- Last Name Column -->
-  <ng-container matColumnDef="lastName">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.lastName' | translate }} </th>
-    <td mat-cell *matCellDef="let element"> {{ element.lastName }} </td>
-  </ng-container>
-
-  <!-- Nationality Column -->
-  <ng-container matColumnDef="nationality">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.nationality' | translate }} </th>
-    <td mat-cell *matCellDef="let element"> {{'nationalities.' + element.nationality | translate }} </td>
-  </ng-container>
-
-  <!-- Title Column -->
-  <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.title' | translate }} </th>
-    <td mat-cell *matCellDef="let element"> {{'titles.' + element.title | translate }}</td>
-  </ng-container>
-
-  <!-- Days on Board Column -->
-  <ng-container matColumnDef="daysOnBoard">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.daysOnBoard' | translate }} </th>
-    <td mat-cell *matCellDef="let element"> {{ element.daysOnBoard }} </td>
-  </ng-container>
-
-  <!-- Daily Rate Column -->
-  <ng-container matColumnDef="dailyRate">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.dailyRate' | translate }} </th>
-    <td mat-cell *matCellDef="let element"> {{ element.dailyRate }}</td>
-  </ng-container>
-  <!-- Currency Column -->
-  <ng-container matColumnDef="currency">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.currency' | translate }} </th>
-    <td mat-cell *matCellDef="let element"> {{ element.currency }} </td>
-  </ng-container>
-
-  <!-- Total Income Column -->
-  <ng-container matColumnDef="totalIncome">
-    <th mat-header-cell *matHeaderCellDef> {{'crew.totalIncome' | translate }} </th>
-    <td mat-cell *matCellDef="let element">
-      {{ element.dailyRate * element.daysOnBoard | currency: element.currency }}
-    </td>
-  </ng-container>
-
-
-  <!-- Certificates Column -->
-  <ng-container matColumnDef="certificates">
-    <th mat-header-cell *matHeaderCellDef> {{'certificates.name' | translate }} </th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-button (click)="showCertificateModal(element.certificates)">{{'View' | translate }}</button>
-    </td>
-  </ng-container>
-
-  <!-- Actions Column -->
-  <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef> {{'actions.header' | translate }} </th>
-    <td mat-cell *matCellDef="let element; let elementIndex = index">
-      <button mat-icon-button color="primary" (click)="openEditModal(element, elementIndex)">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button mat-icon-button color="warn" (click)="deleteCrew(elementIndex)">
-        <mat-icon>delete</mat-icon>
-      </button>
-      <button mat-icon-button color="warn" (click)="navigateToCrewCard(elementIndex)">
-        <mat-icon>person</mat-icon>
-      </button>
-    </td>
-  </ng-container>
-  <!-- Header Row -->
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <!-- Data Rows -->
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-<div class="total-income-summary">
+<div class="total-income">
   <h3>{{'Total Income Summary' | translate }}</h3>
   <div *ngFor="let currency of totalIncomeByCurrency">
     <p>

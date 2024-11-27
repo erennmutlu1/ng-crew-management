@@ -1,6 +1,9 @@
-<div class="header">
+<div>
   <mat-toolbar>
-    Header
+    <mat-icon class='icon' fontIcon="directions_boat" />
+    <span>{{'Crew Management System' | translate}}</span>
+    <span class="spacer"></span>
+    <app-select-language></app-select-language>
   </mat-toolbar>
 </div>
 <div class="back-icon">
@@ -8,7 +11,7 @@
     <mat-icon>arrow_back</mat-icon>
   </button>
 </div>
-<div>
+<div class="crew-card">
   <mat-tab-group>
     <!-- Crew Member Information Tab -->
     <mat-tab label="Crew Member Information">

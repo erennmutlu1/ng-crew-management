@@ -3,3 +3,119 @@
   margin-top: 5px;
   margin-bottom: 10px;
 }
+
+.icon {
+  margin-right: 15px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Back Icon Button */
+.back-icon {
+  margin: 10px;
+}
+
+.back-icon button {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-icon mat-icon {
+  color: #c75233;
+  font-size: 24px;
+}
+
+mat-tab-group {
+  margin: 20px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-tab-group ::ng-deep .mat-tab-label {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+mat-tab-group ::ng-deep .mat-tab-label-active {
+  color: #c75233;
+  font-weight: bold;
+  border-bottom: 2px solid #c75233;
+}
+
+/* Crew Details Section */
+.crew-details {
+  margin: 20px;
+}
+
+.crew-info-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.crew-info-card mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c75233;
+}
+
+.tab-content p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.tab-content strong {
+  color: #444;
+}
+
+/* Certificates List Section */
+.certificates-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.certificate-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.certificate-card mat-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #c75233;
+}
+
+.certificate-card p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+@media (max-width: 768px) {
+  .crew-details {
+    margin: 10px;
+  }
+
+  mat-tab-group {
+    margin: 10px;
+  }
+
+  .certificates-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.crew-card{
+  display: flex;
+  justify-content: center;}

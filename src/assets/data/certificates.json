@@ -1,4 +1,7 @@
 [
-  { "id": 1, "name": "Seamanship", "description": "Advanced skills for captains." },
-  { "id": 2, "name": "Engineering", "description": "Diploma for engineers." }
+  { "id": 1, "name": "Seamanship Mastery", "description": "Elite-level skills for captains and deck officers." },
+  { "id": 2, "name": "Eco Navigator", "description": "Training in sustainable navigation and environmental stewardship." },
+  { "id": 3, "name": "Crisis Commander", "description": "Advanced techniques for handling on-board emergencies and crises." },
+  { "id": 4, "name": "Marine Tech Innovator", "description": "Cutting-edge certification in maritime technology and automation." },
+  { "id": 5, "name": "Gastronomic Explorer", "description": "Culinary excellence for chefs in dynamic maritime settings." }
 ]
