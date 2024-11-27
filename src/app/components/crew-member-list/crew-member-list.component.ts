@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./crew-member-list.component.css'],
 })
 export class CrewMemberListComponent {
+  totalIncomeByCurrency: { currency: string; total: number }[] = [];
   crewMemberList: CrewMember[] = [];
   displayedColumns: string[] = [
     'firstName',
@@ -24,6 +25,7 @@ export class CrewMemberListComponent {
     'daysOnBoard',
     'dailyRate',
     'currency',
+    'totalIncome',
     'certificates',
     'actions',
   ];
@@ -35,7 +37,10 @@ export class CrewMemberListComponent {
   }
 
   loadCrew(): void {
-    this.crewService.getCrewMemberList().subscribe((data) => (this.crewMemberList = data));
+    this.crewService.getCrewMemberList().subscribe((data) => {
+      this.crewMemberList = data;
+      this.calculateTotalIncomeByCurrency();
+    });
   }
 
   showCertificateModal(certificate: any): void {
@@ -94,5 +99,23 @@ export class CrewMemberListComponent {
 
   navigateToCrewCard(index: number): void {
     this.router.navigate(['/crew-card-information', index]);
+  }
+
+  calculateTotalIncomeByCurrency(): void {
+    const incomeMap: { [key: string]: number } = {};
+
+    this.crewMemberList.forEach((crew) => {
+      const income = crew.dailyRate * crew.daysOnBoard;
+      if (incomeMap[crew.currency]) {
+        incomeMap[crew.currency] += income;
+      } else {
+        incomeMap[crew.currency] = income;
+      }
+    });
+
+    this.totalIncomeByCurrency = Object.keys(incomeMap).map((currency) => ({
+      currency,
+      total: incomeMap[currency],
+    }));
   }
 }

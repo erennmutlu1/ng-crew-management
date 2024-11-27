@@ -45,6 +45,16 @@
     <th mat-header-cell *matHeaderCellDef> Currency </th>
     <td mat-cell *matCellDef="let element"> {{ element.currency }} </td>
   </ng-container>
+
+  <!-- Total Income Column -->
+  <ng-container matColumnDef="totalIncome">
+    <th mat-header-cell *matHeaderCellDef> Total Income </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.dailyRate * element.daysOnBoard | currency: element.currency }}
+    </td>
+  </ng-container>
+
+
   <!-- Certificates Column -->
   <ng-container matColumnDef="certificates">
     <th mat-header-cell *matHeaderCellDef> Certificates </th>
@@ -73,3 +83,12 @@
   <!-- Data Rows -->
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div class="total-income-summary">
+  <h3>Total Income Summary</h3>
+  <div *ngFor="let currency of totalIncomeByCurrency">
+    <p>
+      {{ currency.currency }}: {{ currency.total | currency: currency.currency }}
+    </p>
+  </div>
+</div>
