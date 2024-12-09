@@ -23,14 +23,16 @@
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <app-nationality></app-nationality>
+
+        <!-- <mat-form-field appearance="fill">
           <mat-label>{{'crew.nationality' | translate }}</mat-label>
           <mat-select formControlName="nationality">
             <mat-option *ngFor="let nationality of nationalities" [value]="nationality">
               {{'nationalities.' + nationality | translate }}
             </mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field appearance="fill">
           <mat-label>{{'crew.currency' | translate }}</mat-label>

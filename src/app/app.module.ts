@@ -30,6 +30,7 @@ import { CrewCardPageComponent } from './components/modals/actions/crew-card-pag
 import { SelectLanguageComponent } from './components/select-language/select-language.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NationalityComponent } from './components/modals/actions/nationality/nationality.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,7 +45,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AddCrewMemberComponent,
     CreateCertificatePageComponent,
     CrewCardPageComponent,
-    SelectLanguageComponent
+    SelectLanguageComponent,
+    NationalityComponent
   ],
   imports: [
     BrowserAnimationsModule,
